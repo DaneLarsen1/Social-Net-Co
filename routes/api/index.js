@@ -1,12 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
-// Import specific route files
-const userRoutes = require('./userRoutes'); // Assumes you have this file set up
-const thoughtRoutes = require('./thoughtRoutes'); // Assumes you have this file set up
+const reactionRoutes = require('./reactionRoutes');
+const userRoutes = require('./userRoutes');
+const postRoutes = require('./postRoutes');
 
-// Use the imported routes
+router.use('/reactions', reactionRoutes);
 router.use('/users', userRoutes);
-router.use('/thoughts', thoughtRoutes);
+router.use('/posts', postRoutes);
 
 module.exports = router;
